@@ -218,7 +218,7 @@ function HomeView({ setView, lang }: any) {
           {[1, 2, 3, 4].map(i => (
             <div key={i} className="group relative aspect-square bg-gray-50 rounded-2xl md:rounded-[40px] overflow-hidden border-2 border-transparent hover:border-red-800 transition-all shadow-sm">
               <img 
-                src={`/data/factory/${i}.jpg`} 
+                src={`data/factory/${i}.jpg`} 
                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
                 alt="Factory"
               />
@@ -258,52 +258,9 @@ function AboutView({ lang }: any) {
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-800 rounded-full opacity-5 hidden lg:block"></div>
           </div>
         </div>
-{/*
-          {/* 資質認證 (純圖片板塊) */}
-          <div className="pt-20 border-t-2 border-dashed border-gray-100">
-            <div className="text-center mb-16 md:mb-24">
-                <h3 className="text-2xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-red-800">{String(t.certification_title)}</h3>
-                <p className="text-gray-400 font-bold text-xs md:text-sm uppercase tracking-widest">{String(t.certification_desc)}</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 px-4 md:px-12">
-                {/* SGS 認證圖片 */}
-                <div className="group">
-                  <div className="aspect-[3/4] bg-white rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl border-[12px] md:border-[24px] border-gray-50 group-hover:border-red-50 transition-all relative">
-                      <img 
-                        src="data\zhengshu\sgs.jpg" 
-                        className="w-full h-full object-contain p-4 md:p-10 scale-95 group-hover:scale-100 transition-transform duration-500" 
-                        alt="SGS Certificate" 
-                      />
-                      <div className="absolute top-0 right-0 bg-red-800 text-white text-[8px] font-black px-4 py-2 uppercase tracking-widest shadow-lg">SGS VERIFIED</div>
-                  </div>
-                  <div className="mt-8 text-center">
-                      <h5 className="text-xl md:text-2xl font-black uppercase tracking-tight text-gray-900 mb-3">SGS 衛生標準認證</h5>
-                      <div className="w-12 h-1 bg-red-800 mx-auto mb-4"></div>
-                      <p className="text-xs md:text-sm text-gray-500 font-bold賞 leading-relaxed max-w-xs mx-auto">符合國家衛生標準 GB15979-2002 的嚴格要求，通過國際權威機構獨立驗證。</p>
-                  </div>
-                </div>
 
-                {/* FSC 認證圖片 */}
-                <div className="group">
-                  <div className="aspect-[3/4] bg-white rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl border-[12px] md:border-[24px] border-gray-50 group-hover:border-green-50 transition-all relative">
-                      <img 
-                        src="data\zhengshu\fsc.jpg" 
-                        className="w-full h-full object-contain p-4 md:p-10 scale-95 group-hover:scale-100 transition-transform duration-500" 
-                        alt="FSC Certificate" 
-                      />
-                      <div className="absolute top-0 right-0 bg-green-800 text-white text-[8px] font-black px-4 py-2 uppercase tracking-widest shadow-lg">FSC CERTIFIED</div>
-                  </div>
-                  <div className="mt-8 text-center">
-                      <h5 className="text-xl md:text-2xl font-black uppercase tracking-tight text-gray-900 mb-3">FSC 森林管理認證</h5>
-                      <div className="w-12 h-1 bg-green-800 mx-auto mb-4"></div>
-                      <p className="text-xs md:text-sm text-gray-500 font-bold leading-relaxed max-w-xs mx-auto">完全符合歐洲 FSC 森林驗證要求，確保原材料來源於負責任管理的森林。</p>
-                  </div>
-                </div>
             </div>
           </div>
-        </div>
-      </div>
     );
   }
 function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
