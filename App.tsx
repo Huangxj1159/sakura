@@ -328,37 +328,71 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
       ))}
     </div>
   );}
-
+  const VideoPlayer = ({ url }: { url: string }) => {
+    if (!url) return null;
+  
+    // 1. 判断是否为 YouTube 链接
+    const isYouTube = url.includes('youtube.com') || url.includes('youtu.be');
+  
+    // 2. 自动转换 YouTube 格式 (防止数据库里忘记改 embed)
+    let finalUrl = url;
+    if (isYouTube) {
+      if (url.includes('shorts/')) {
+        finalUrl = url.replace('shorts/', 'embed/');
+      } else if (url.includes('watch?v=')) {
+        finalUrl = url.replace('watch?v=', 'embed/').split('&')[0];
+      } else if (url.includes('youtu.be/')) {
+        finalUrl = url.replace('youtu.be/', 'youtube.com/embed/');
+      }
+    }
+  
+    return (
+      <div className="w-full aspect-video rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-black border-4 md:border-8 border-white">
+        {isYouTube ? (
+          <iframe
+            width="100%"
+            height="100%"
+            src={finalUrl}
+            title="Video Player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <video controls className="w-full h-full object-cover">
+            <source src={url} type="video/mp4" />
+            您的瀏覽器不支持播放該視頻。
+          </video>
+        )}
+      </div>
+    );
+  };
+  
   function ProductDetailView({ productId, products, addToCart, lang }: any) {
     const p = products.find((x: Product) => x.id === productId);
     const t = TRANSLATIONS[lang];
     
-    // 圖片切換狀態
     const [activeImg, setActiveImg] = useState(p?.image || '');
   
-    // 當切換產品時，重置主圖
     useEffect(() => { 
       if (p) setActiveImg(p.image); 
     }, [p]);
   
     if (!p) return null;
   
-    // 【核心邏輯】判斷是否為柯洛克系列，只有此系列可以選購
     const isPurchaseable = p.category === 'category_cloak';
   
     return (
       <div className="bg-white">
-        {/* 頂部產品基本資訊區 */}
+        {/* 顶部产品基本信息区 */}
         <div className="max-w-7xl mx-auto py-12 md:py-24 px-4 flex flex-col lg:flex-row gap-10 md:gap-24 items-start border-b">
           
-          {/* 左側：圖片展示區 */}
+          {/* 左侧：图片展示区 */}
           <div className="flex-1 w-full space-y-4 md:space-y-6">
-            {/* 主圖 */}
             <div className="rounded-2xl md:rounded-[40px] overflow-hidden border-4 md:border-8 border-gray-50 shadow-2xl aspect-square bg-gray-50">
               <img src={activeImg} className="w-full h-full object-cover" alt="Main Product" />
             </div>
             
-            {/* 縮略圖列表 */}
             <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 md:gap-3">
               {(p.images && p.images.length > 0 ? p.images : [p.image]).map((img: string, idx: number) => (
                 <button 
@@ -372,7 +406,7 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
             </div>
           </div>
   
-          {/* 右側：文字資訊與購買區 */}
+          {/* 右侧：文字信息与购买区 */}
           <div className="flex-1 w-full flex flex-col justify-center">
             <div className="mb-4 md:mb-8">
               <span className="bg-red-800 text-white px-4 py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest">
@@ -385,7 +419,6 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
             </h2>
   
             <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-              {/* 統一顯示 HKD 價格 */}
               <p className="text-4xl md:text-6xl text-red-800 font-black">
                 HKD $ {p.price.toFixed(2)}
               </p>
@@ -395,7 +428,6 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
               <p>{String(p.description[lang])}</p>
             </div>
   
-            {/* 購買按鈕邏輯：判斷庫存與系列權限 */}
             <button 
               disabled={p.stock <= 0 || !isPurchaseable} 
               onClick={() => addToCart(p.id)} 
@@ -412,7 +444,6 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
                   : (lang === Language.TC ? '此系列僅供展示，暫不開放選購' : 'Display Only - Not For Sale')}
             </button>
             
-            {/* 非柯洛克系列提示文字 */}
             {!isPurchaseable && (
               <p className="mt-4 text-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
                 {lang === Language.TC ? '* 柯洛克系列產品方可下單' : '* Ordering is available for CLOAK series only'}
@@ -421,10 +452,10 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
           </div>
         </div>
         
-        {/* 下方：詳情內容區（視頻與長圖） */}
+        {/* 下方：详情内容区 */}
         <div className="max-w-5xl mx-auto py-12 md:py-24 px-4 bg-gray-50 space-y-12 md:space-y-20">
           
-          {/* 展示視頻 */}
+          {/* 展示视频 - 这里使用了新组件 */}
           {p.videoUrl && (
             <div className="space-y-6 md:space-y-10">
               <div className="flex items-center gap-4">
@@ -433,15 +464,12 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
                  </h3>
                  <div className="h-1 bg-red-800 flex-1 opacity-10"></div>
               </div>
-              <div className="rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-black aspect-video border-4 md:border-8 border-white">
-                <video controls className="w-full h-full object-cover" key={p.id}>
-                  <source src={p.videoUrl} type="video/mp4" />
-                </video>
-              </div>
+              {/* 调用智能视频组件 */}
+              <VideoPlayer url={p.videoUrl} />
             </div>
           )}
   
-          {/* 詳細規格圖/描述長圖 */}
+          {/* 详细规格图 */}
           {p.detailImage && (
             <div className="space-y-6 md:space-y-10">
               <div className="flex items-center gap-4">
