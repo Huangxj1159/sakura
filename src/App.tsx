@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Language, Product, CartItem, Order, OrderStatus, User, UserRole } from './src/types';
-import { TRANSLATIONS, INITIAL_PRODUCTS } from './src/constants';
+import { Language, Product, CartItem, Order, OrderStatus, User, UserRole } from './types';
+import { TRANSLATIONS, INITIAL_PRODUCTS } from './constants';
 
 const DB = {
   getUsers: (): User[] => JSON.parse(localStorage.getItem('sp_users') || '[]'),
