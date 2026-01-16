@@ -108,7 +108,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4 md:gap-12">
             <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter uppercase">SAKURA</h1>
-            <div className="hidden lg:flex gap-8 text-[11px] font-black uppercase tracking-widest">
+            <div className="flex gap-8 text-[11px] font-black uppercase tracking-widest">
               <button onClick={() => setView('home')} className={view === 'home' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.home)}</button>
               <button onClick={() => setView('about')} className={view === 'about' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.about)}</button>
               <button onClick={() => setView('products')} className={view === 'products' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.products)}</button>
@@ -164,6 +164,11 @@ export default function App() {
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">CONTACT</h4>
             <p className="text-sm font-black text-red-800">sakura328@yahoo.com.hk</p>
+            <p className="text-sm font-black text-red-800 mt-1">
+    <a href="https://wa.me/85256112982" target="_blank" rel="noopener noreferrer" className="hover:underline">
+      WhatsApp: 56112982
+    </a>
+  </p>
             <p className="text-xs text-gray-400 font-black mt-10 uppercase">© 2024 SAKURA Products Ltd.</p>
           </div>
         </div>
@@ -185,7 +190,7 @@ function HomeView({ setView, lang }: any) {
         <img src="data\前台.jpg" className="absolute inset-0 w-full h-full object-cover opacity-50" alt="Banner" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
         <div className="relative max-w-4xl px-4">
-          <h2 className="text-3xl sm:text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-tight">{String(t.home_title)}</h2>
+          <h2 className="text-3xl sm:text-5xl text-4xl sm:text-6xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-tight">{String(t.home_title)}</h2>
           <p className="text-gray-200 text-sm md:text-2xl mb-8 md:mb-12 font-bold max-w-2xl mx-auto leading-relaxed drop-shadow-lg">{String(t.home_subtitle)}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button onClick={() => setView('products')} className="bg-[#8b0000] text-white px-10 md:px-16 py-4 md:py-5 rounded-full font-black text-[10px] md:text-xs uppercase tracking-[0.2em] shadow-2xl">{String(t.buy_now)}</button>
@@ -265,9 +270,16 @@ function AboutView({ lang }: any) {
   }
 function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
   const t = TRANSLATIONS[lang];
-  // 獲取品類順序：優先遵從 INITIAL_PRODUCTS 中出現的順序，確保新增品類也不會打亂展示
-  const allCategories = Array.from(new Set([...INITIAL_PRODUCTS.map(p => p.category), ...products.map(p => p.category)]));
-  // 僅保留當前產品列表中存在的品類
+  
+  // 獲取所有品類
+  const rawCategories = Array.from(new Set([...INITIAL_PRODUCTS.map(p => p.category), ...products.map(p => p.category)]));
+  
+  // 【修改點 1】強制將 'category_cloak' 放到數組最前面
+  const allCategories = [
+    'category_cloak',
+    ...rawCategories.filter(cat => cat !== 'category_cloak')
+  ];
+
   const activeCategories = allCategories.filter(cat => products.some(p => p.category === cat));
   
   return (
@@ -275,100 +287,178 @@ function ProductsView({ products, setView, setProduct, addToCart, lang }: any) {
       {activeCategories.map((cat: string) => (
         <div key={cat} className="mb-12 md:mb-24">
           <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12 border-b-2 md:border-b-4 border-gray-100 pb-4 md:pb-6">
-            <h3 className="text-xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter">{String(t[cat] || cat)}</h3>
+            <h3 className="text-xl md:text-4xl font-black text-gray-900 uppercase tracking-tighter">
+                {/* 顯示翻譯名稱 */}
+                {String(t[cat] || cat)}
+            </h3>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-8">
-            {products.filter((p: Product) => p.category === cat).map((p: Product) => (
-              <div key={p.id} className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-5 border-2 border-transparent hover:border-red-800 transition-all flex flex-col group hover:shadow-xl">
-                <div className="relative aspect-square mb-4 md:mb-6 cursor-pointer rounded-xl md:rounded-2xl overflow-hidden bg-gray-50" onClick={() => { setProduct(p.id); setView('detail'); }}>
-                  <img src={p.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform" alt={String(p.name[lang])} />
-                  {p.stock <= 0 && <div className="absolute inset-0 bg-white/80 flex items-center justify-center text-[8px] md:text-[10px] font-black uppercase text-red-800">{String(t.out_of_stock)}</div>}
+            {products.filter((p: Product) => p.category === cat).map((p: Product) => {
+              // 【修改點 2】判斷是否可以選購 (只有柯洛克系列可以)
+              const isPurchaseable = p.category === 'category_cloak';
+              
+              return (
+                <div key={p.id} className="bg-white rounded-2xl md:rounded-3xl p-3 md:p-5 border-2 border-transparent hover:border-red-800 transition-all flex flex-col group hover:shadow-xl">
+                  <div className="relative aspect-square mb-4 md:mb-6 cursor-pointer rounded-xl md:rounded-2xl overflow-hidden bg-gray-50" onClick={() => { setProduct(p.id); setView('detail'); }}>
+                    <img src={p.image} className="w-full h-full object-cover group-hover:scale-110 transition-transform" alt={String(p.name[lang])} />
+                    {p.stock <= 0 && <div className="absolute inset-0 bg-white/80 flex items-center justify-center text-[8px] md:text-[10px] font-black uppercase text-red-800">{String(t.out_of_stock)}</div>}
+                    {!isPurchaseable && <div className="absolute top-2 right-2 bg-gray-500/80 text-white text-[7px] px-2 py-1 rounded-full font-black uppercase">僅供展示</div>}
+                  </div>
+                  <h4 className="text-[10px] md:text-sm font-black text-gray-800 h-8 md:h-10 overflow-hidden mb-3 md:mb-4 line-clamp-2 leading-tight uppercase">{String(p.name[lang])}</h4>
+                  <div className="mt-auto flex items-center justify-between">
+                    <span className="text-red-800 font-black text-sm md:text-xl">HKD ${p.price}</span>
+                    {/* 修改按鈕禁用邏輯 */}
+                    <button 
+                      disabled={p.stock <= 0 || !isPurchaseable} 
+                      onClick={() => addToCart(p.id)} 
+                      className={`text-[8px] md:text-[10px] px-3 md:px-5 py-1.5 md:py-2 rounded-full font-black uppercase shadow-md transition-all ${
+                        isPurchaseable 
+                        ? 'bg-red-800 text-white hover:bg-red-700' 
+                        : 'bg-gray-200 text-gray-500 cursor-not-allowed shadow-none'
+                      }`}
+                    >
+                      {isPurchaseable ? String(t.add) : (lang === Language.TC ? '不可選購' : 'Display Only')}
+                    </button>
+                  </div>
                 </div>
-                <h4 className="text-[10px] md:text-sm font-black text-gray-800 h-8 md:h-10 overflow-hidden mb-3 md:mb-4 line-clamp-2 leading-tight uppercase">{String(p.name[lang])}</h4>
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="text-red-800 font-black text-sm md:text-xl">¥{p.price}</span>
-                  <button disabled={p.stock <= 0} onClick={() => addToCart(p.id)} className="bg-red-800 disabled:bg-gray-100 text-white text-[8px] md:text-[10px] px-3 md:px-5 py-1.5 md:py-2 rounded-full font-black uppercase shadow-md">{String(t.add)}</button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       ))}
     </div>
-  );
-}
+  );}
 
-function ProductDetailView({ productId, products, addToCart, lang }: any) {
-  const p = products.find((x: Product) => x.id === productId);
-  const t = TRANSLATIONS[lang];
-  const [activeImg, setActiveImg] = useState(p?.image || '');
-
-  useEffect(() => { if (p) setActiveImg(p.image); }, [p]);
-
-  if (!p) return null;
-
-  return (
-    <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-12 md:py-24 px-4 flex flex-col lg:flex-row gap-10 md:gap-24 items-start border-b">
-        <div className="flex-1 w-full space-y-4 md:space-y-6">
-          <div className="rounded-2xl md:rounded-[40px] overflow-hidden border-4 md:border-8 border-gray-50 shadow-2xl aspect-square bg-gray-50">
-            <img src={activeImg} className="w-full h-full object-cover" alt="Main" />
+  function ProductDetailView({ productId, products, addToCart, lang }: any) {
+    const p = products.find((x: Product) => x.id === productId);
+    const t = TRANSLATIONS[lang];
+    
+    // 圖片切換狀態
+    const [activeImg, setActiveImg] = useState(p?.image || '');
+  
+    // 當切換產品時，重置主圖
+    useEffect(() => { 
+      if (p) setActiveImg(p.image); 
+    }, [p]);
+  
+    if (!p) return null;
+  
+    // 【核心邏輯】判斷是否為柯洛克系列，只有此系列可以選購
+    const isPurchaseable = p.category === 'category_cloak';
+  
+    return (
+      <div className="bg-white">
+        {/* 頂部產品基本資訊區 */}
+        <div className="max-w-7xl mx-auto py-12 md:py-24 px-4 flex flex-col lg:flex-row gap-10 md:gap-24 items-start border-b">
+          
+          {/* 左側：圖片展示區 */}
+          <div className="flex-1 w-full space-y-4 md:space-y-6">
+            {/* 主圖 */}
+            <div className="rounded-2xl md:rounded-[40px] overflow-hidden border-4 md:border-8 border-gray-50 shadow-2xl aspect-square bg-gray-50">
+              <img src={activeImg} className="w-full h-full object-cover" alt="Main Product" />
+            </div>
+            
+            {/* 縮略圖列表 */}
+            <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 md:gap-3">
+              {(p.images && p.images.length > 0 ? p.images : [p.image]).map((img: string, idx: number) => (
+                <button 
+                  key={idx} 
+                  onClick={() => setActiveImg(img)} 
+                  className={`aspect-square rounded-lg md:rounded-xl overflow-hidden border-2 md:border-4 transition-all ${activeImg === img ? 'border-red-800' : 'border-transparent'}`}
+                >
+                  <img src={img} className="w-full h-full object-cover" alt={`Thumb ${idx}`} />
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-4 sm:grid-cols-6 gap-2 md:gap-3">
-            {(p.images && p.images.length > 0 ? p.images : [p.image]).map((img: string, idx: number) => (
-              <button key={idx} onClick={() => setActiveImg(img)} className={`aspect-square rounded-lg md:rounded-xl overflow-hidden border-2 md:border-4 transition-all ${activeImg === img ? 'border-red-800' : 'border-transparent'}`}>
-                <img src={img} className="w-full h-full object-cover" alt="Thumb" />
-              </button>
-            ))}
+  
+          {/* 右側：文字資訊與購買區 */}
+          <div className="flex-1 w-full flex flex-col justify-center">
+            <div className="mb-4 md:mb-8">
+              <span className="bg-red-800 text-white px-4 py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest">
+                {String(t[p.category] || p.category)}
+              </span>
+            </div>
+            
+            <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-6 md:mb-8 leading-tight uppercase">
+              {String(p.name[lang])}
+            </h2>
+  
+            <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
+              {/* 統一顯示 HKD 價格 */}
+              <p className="text-4xl md:text-6xl text-red-800 font-black">
+                HKD $ {p.price.toFixed(2)}
+              </p>
+            </div>
+  
+            <div className="bg-gray-50 p-6 md:p-10 rounded-2xl md:rounded-[40px] border-2 md:border-4 border-dashed border-gray-100 mb-8 md:mb-12 text-gray-700 font-bold text-sm md:text-base leading-relaxed">
+              <p>{String(p.description[lang])}</p>
+            </div>
+  
+            {/* 購買按鈕邏輯：判斷庫存與系列權限 */}
+            <button 
+              disabled={p.stock <= 0 || !isPurchaseable} 
+              onClick={() => addToCart(p.id)} 
+              className={`w-full py-5 md:py-6 rounded-full font-black text-[10px] md:text-xs uppercase tracking-[0.2em] shadow-2xl transition-all ${
+                isPurchaseable && p.stock > 0
+                ? 'bg-red-800 text-white hover:scale-[1.02] active:scale-[0.98]' 
+                : 'bg-gray-300 text-gray-500 cursor-not-allowed shadow-none'
+              }`}
+            >
+              {p.stock <= 0 
+                ? String(t.out_of_stock) 
+                : isPurchaseable 
+                  ? String(t.add_to_cart) 
+                  : (lang === Language.TC ? '此系列僅供展示，暫不開放選購' : 'Display Only - Not For Sale')}
+            </button>
+            
+            {/* 非柯洛克系列提示文字 */}
+            {!isPurchaseable && (
+              <p className="mt-4 text-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                {lang === Language.TC ? '* 柯洛克系列產品方可下單' : '* Ordering is available for CLOAK series only'}
+              </p>
+            )}
           </div>
         </div>
-        <div className="flex-1 w-full flex flex-col justify-center">
-          <div className="mb-4 md:mb-8">
-            <span className="bg-red-800 text-white px-4 py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest">{String(t[p.category] || p.category)}</span>
-          </div>
-          <h2 className="text-2xl md:text-5xl font-black text-gray-900 mb-6 md:mb-8 leading-tight uppercase">{String(p.name[lang])}</h2>
-          <div className="flex items-baseline gap-4 md:gap-6 mb-8 md:mb-12">
-            <p className="text-4xl md:text-6xl text-red-800 font-black">¥ {p.price.toFixed(2)}</p>
-          </div>
-          <div className="bg-gray-50 p-6 md:p-10 rounded-2xl md:rounded-[40px] border-2 md:border-4 border-dashed border-gray-100 mb-8 md:mb-12 text-gray-700 font-bold text-sm md:text-base">
-            <p>{String(p.description[lang])}</p>
-          </div>
-          <button disabled={p.stock <= 0} onClick={() => addToCart(p.id)} className="w-full bg-red-800 disabled:bg-gray-200 text-white py-5 md:py-6 rounded-full font-black text-[10px] md:text-xs uppercase tracking-[0.2em] shadow-2xl">
-            {p.stock > 0 ? String(t.add_to_cart) : String(t.out_of_stock)}
-          </button>
+        
+        {/* 下方：詳情內容區（視頻與長圖） */}
+        <div className="max-w-5xl mx-auto py-12 md:py-24 px-4 bg-gray-50 space-y-12 md:space-y-20">
+          
+          {/* 展示視頻 */}
+          {p.videoUrl && (
+            <div className="space-y-6 md:space-y-10">
+              <div className="flex items-center gap-4">
+                 <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">
+                   {lang === Language.TC ? '產品展示視頻' : 'Product Showcase Video'}
+                 </h3>
+                 <div className="h-1 bg-red-800 flex-1 opacity-10"></div>
+              </div>
+              <div className="rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-black aspect-video border-4 md:border-8 border-white">
+                <video controls className="w-full h-full object-cover" key={p.id}>
+                  <source src={p.videoUrl} type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          )}
+  
+          {/* 詳細規格圖/描述長圖 */}
+          {p.detailImage && (
+            <div className="space-y-6 md:space-y-10">
+              <div className="flex items-center gap-4">
+                 <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">
+                   {lang === Language.TC ? '商品詳細規格' : 'Product Specifications'}
+                 </h3>
+                 <div className="h-1 bg-red-800 flex-1 opacity-10"></div>
+              </div>
+              <div className="rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-white border-2 border-gray-100">
+                 <img src={p.detailImage} className="w-full h-auto block" alt="Detail Specifications" />
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      
-      <div className="max-w-5xl mx-auto py-12 md:py-24 px-4 bg-gray-50 space-y-12 md:space-y-20">
-        {p.videoUrl && (
-          <div className="space-y-6 md:space-y-10">
-            <div className="flex items-center gap-4">
-               <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">{lang === Language.TC ? '產品展示視頻' : 'Product Video'}</h3>
-               <div className="h-1 bg-red-800 flex-1 opacity-10"></div>
-            </div>
-            <div className="rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-black aspect-video border-4 md:border-8 border-white">
-              <video controls className="w-full h-full object-cover" key={p.id}>
-                <source src={p.videoUrl} type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        )}
-
-        {p.detailImage && (
-          <div className="space-y-6 md:space-y-10">
-            <div className="flex items-center gap-4">
-               <h3 className="text-xl md:text-2xl font-black uppercase tracking-tighter">{lang === Language.TC ? '商品詳細規格' : 'Product Specifications'}</h3>
-               <div className="h-1 bg-red-800 flex-1 opacity-10"></div>
-            </div>
-            <div className="rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl bg-white border-2 border-gray-100">
-               <img src={p.detailImage} className="w-full h-auto block" alt="Detail Specs" />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-}
+    );
+  }
 
 function AdminView({ products, setProducts, orders, setOrders, lang }: any) {
   const [tab, setTab] = useState<'inventory' | 'orders' | 'add'>('inventory');
@@ -533,12 +623,12 @@ function AdminView({ products, setProducts, orders, setOrders, lang }: any) {
           <img src={p?.image} className="w-10 h-10 rounded-lg object-cover border" />
           <div className="flex flex-col">
             <span className="text-gray-800 uppercase">{p?.name[lang]}</span>
-            <span className="text-gray-400">单价: ¥{p?.price}</span>
+            <span className="text-gray-400">单价: HKD ${p?.price}</span>
           </div>
         </div>
         <div className="text-right">
           <span>数量: {item.quantity}</span>
-          <p className="text-red-800">小计: ¥{((p?.price || 0) * item.quantity).toFixed(2)}</p>
+          <p className="text-red-800">小计: HKD ${((p?.price || 0) * item.quantity).toFixed(2)}</p>
         </div>
       </div>
     );
@@ -563,7 +653,7 @@ function AdminView({ products, setProducts, orders, setOrders, lang }: any) {
                 </div>
                 <div className="flex items-end">
                    <div className="bg-red-50 text-red-800 px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest border-2 border-red-100">
-                      Total: ¥ {o.totalPrice.toFixed(2)}
+                      Total: HKD $ {o.totalPrice.toFixed(2)}
                    </div>
                 </div>
               </div>
@@ -601,10 +691,10 @@ function MyOrdersView({ orders, currentUser, products, lang }: any) {
             <img src={p?.image} className="w-12 h-12 md:w-16 md:h-16 rounded-xl object-cover border-2 border-white shadow-sm" />
             <div>
               <p className="text-xs md:text-sm font-black uppercase text-gray-800">{p?.name[lang]}</p>
-              <p className="text-[10px] text-gray-400 font-bold">¥{p?.price} x {item.quantity}</p>
+              <p className="text-[10px] text-gray-400 font-bold">HKD ${p?.price} x {item.quantity}</p>
             </div>
           </div>
-          <p className="text-sm md:text-lg font-black text-gray-700">¥{((p?.price || 0) * item.quantity).toFixed(2)}</p>
+          <p className="text-sm md:text-lg font-black text-gray-700">HKD ${((p?.price || 0) * item.quantity).toFixed(2)}</p>
         </div>
       );
     })}
@@ -613,7 +703,7 @@ function MyOrdersView({ orders, currentUser, products, lang }: any) {
 
             <div className="flex justify-between items-end">
                <div>
-                  <p className="text-2xl md:text-4xl font-black text-red-800 tracking-tighter">¥ {o.totalPrice.toFixed(2)}</p>
+                  <p className="text-2xl md:text-4xl font-black text-red-800 tracking-tighter">HKD $ {o.totalPrice.toFixed(2)}</p>
                   {o.trackingNumber && <p className="mt-4 text-xs font-black text-red-800 bg-red-50 p-2 rounded inline-block">{String(t.tracking_no)}: {o.trackingNumber}</p>}
                </div>
                <p className="text-[10px] font-black text-gray-400 uppercase">{o.createdAt}</p>
@@ -650,9 +740,9 @@ function CartView({ cart, products, lang, setView }: any) {
                   <img src={p?.image} className="w-16 h-16 md:w-24 md:h-24 rounded-xl object-cover border shadow-sm" />
                   <div className="flex-1">
                     <h4 className="font-black text-gray-800 text-xs md:text-lg uppercase line-clamp-1">{String(p?.name[lang])}</h4>
-                    <p className="text-[10px] text-gray-400 font-black">¥{p?.price} x {item.quantity}</p>
+                    <p className="text-[10px] text-gray-400 font-black">HKD ${p?.price} x {item.quantity}</p>
                   </div>
-                  <p className="text-sm md:text-2xl font-black text-gray-900">¥{(p ? p.price * item.quantity : 0).toFixed(2)}</p>
+                  <p className="text-sm md:text-2xl font-black text-gray-900">HKD ${(p ? p.price * item.quantity : 0).toFixed(2)}</p>
                 </div>
               );
             })}
@@ -660,7 +750,7 @@ function CartView({ cart, products, lang, setView }: any) {
           <div className="p-6 md:p-12 flex flex-col md:flex-row justify-between items-center bg-gray-900 text-white gap-6">
             <div className="text-center md:text-left">
               <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest mb-2">{String(t.total)}</p>
-              <div className="text-3xl md:text-5xl font-black text-yellow-400 tracking-tighter">¥ {total.toFixed(2)}</div>
+              <div className="text-3xl md:text-5xl font-black text-yellow-400 tracking-tighter">HKD $ {total.toFixed(2)}</div>
             </div>
             <button onClick={() => setView('checkout')} className="w-full md:w-auto bg-red-800 text-white px-10 md:px-20 py-4 md:py-6 rounded-full font-black text-xs md:text-lg uppercase shadow-2xl">{String(t.proceed_checkout)}</button>
           </div>
