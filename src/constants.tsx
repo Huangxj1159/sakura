@@ -466,7 +466,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "無塵紙杯墊 宴會商用燙金水墨", EN: "Airlaid Coaster Gold Foil Ink" },
     price: 0, image: "data/28/商品主图_5.jpg",
     images: ["data/28/商品主图_5.jpg","data/28/商品主图_2.jpg","data/28/商品主图_3.jpg","data/28/商品主图_4.jpg","data/28/商品主图_5.jpg"],
-    detailImage: "data/28/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/28/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "採用高品質無塵紙，吸水性極強，支持精細燙金與水墨壓印工藝。", EN: "High-absorbency airlaid, supports fine gold foil and ink embossing." },
     stock: 10000, active: true
   },
@@ -476,7 +476,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "定制紙杯墊 商用燙金壓印LOGO", EN: "Custom Coaster Branded Logo" },
     price: 0, image: "data/29/商品主图_5.jpg",
     images: ["data/29/商品主图_5.jpg","data/29/商品主图_2.jpg","data/29/商品主图_3.jpg","data/29/商品主图_4.jpg","data/29/商品主图_5.jpg"],
-    detailImage: "data/29/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/29/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "環保材質，多種壓印技術可選，保護桌面更展示品牌價值。", EN: "Eco-friendly, various embossing techniques to show brand value." },
     stock: 10000, active: true
   },
@@ -488,7 +488,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "佈感紙圍裙 燒烤火鍋專用", EN: "Paper Apron BBQ/Hotpot Special" },
     price: 0, image: "data/30/商品主图_5.jpg",
     images: ["data/30/商品主图_5.jpg","data/30/商品主图_2.jpg","data/30/商品主图_3.jpg","data/30/商品主图_4.jpg","data/30/商品主图_5.jpg"],
-    detailImage: "data/30/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/30/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "一次性環保材質，強效防油汙，佩戴輕便，商用首選。", EN: "Disposable eco-material, oil-resistant, lightweight for business." },
     stock: 10000, active: true
   },
@@ -498,7 +498,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "無紡布圍裙 客用餐飲環保款", EN: "Non-woven Apron Eco Catering" },
     price: 0, image: "data/31/商品主图_5.jpg",
     images: ["data/31/商品主图_5.jpg","data/31/商品主图_2.jpg","data/31/商品主图_3.jpg","data/31/商品主图_4.jpg","data/31/商品主图_5.jpg"],
-    detailImage: "data/31/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/31/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "採用高品質無紡布，透氣舒適且防水防油，支持來圖定制。", EN: "High-quality non-woven, breathable and oil-proof, supports custom images." },
     stock: 10000, active: true
   },
@@ -510,7 +510,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "黑色抽紙 黑色純色餐巾抽紙", EN: "Black Tissue Solid Black Facial" },
     price: 2.0, image: "data/32/商品主图_2.jpg",
     images: ["data/32/商品主图_2.jpg","data/32/商品主图_2.jpg","data/32/商品主图_3.jpg","data/32/商品主图_4.jpg","data/32/商品主图_5.jpg",,"data/32/商品主图_6.jpg",,"data/32/商品主图_7.jpg"],
-    detailImage: "data/32/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/32/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "極簡純黑設計，高品質木漿纖維，抽取順滑，吸水不掉屑。", EN: "Minimalist black design, high-quality pulp, smooth extraction." },
     stock: 10000, active: true
   },
@@ -520,7 +520,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "定制彩色抽紙 商用廣告款", EN: "Custom Tissue Advertising Colored" },
     price: 2.0, image: "data/33/商品主图_2.jpg",
     images: ["data/33/商品主图_2.jpg","data/33/商品主图_2.jpg","data/33/商品主图_3.jpg","data/33/商品主图_4.jpg","data/33/商品主图_5.jpg","data/33/商品主图_6.jpg","data/33/商品主图_7.jpg"],
-    detailImage: "data/33/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/33/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "繽紛色彩選擇，支持企業外盒廣告定做，宣傳效力極強。", EN: "Vibrant colors, supports custom box advertising for branding." },
     stock: 10000, active: true
   },
@@ -532,7 +532,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "日式濕毛巾 溫泉旅館商務款", EN: "Wet Towel Japanese Onsen" },
     price: 0, image: "data/34/商品主图_2.jpg",
     images: ["data/34/商品主图_2.jpg","data/34/商品主图_2.jpg","data/34/商品主图_3.jpg","data/34/商品主图_4.jpg","data/34/商品主图_5.jpg","data/34/商品主图_6.jpg"],
-    detailImage: "data/34/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/34/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "柔韌加厚材質，仿毛巾細膩質感，支持 Logo 來樣定制。", EN: "Thickened towel-feel texture, supports logo customization." },
     stock: 10000, active: true
   },
@@ -554,7 +554,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "大軸原紙 染色無塵紙批發", EN: "Jumbo Roll Dyed Airlaid" },
     price: 0, image: "data/36/商品主图_3.jpg",
     images: ["data/36/商品主图_3.jpg","data/36/商品主图_2.jpg","data/36/商品主图_3.jpg","data/36/商品主图_4.jpg","data/36/商品主图_5.jpg","data/36/商品主图_6.jpg"],
-    detailImage: "data/36/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/36/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "工業大規格卷軸，染色均勻，吸水力強，深加工原材料首選。", EN: "Industrial jumbo rolls, even dyeing, superior absorbency." },
     stock: 10000, active: true
   },
@@ -574,7 +574,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ,"data/37/商品主图_13.jpg"
     ,"data/37/商品主图_14.jpg"
   ],
-    detailImage: "data/37/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/37/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "純竹漿纖維製造，韌性極佳，適合製造各類高端商用擦手紙。", EN: "Bamboo fiber made, excellent toughness for hand towels." },
     stock: 10000, active: true
   },
@@ -592,7 +592,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     ,"data/38/商品主图_9.jpg"
     ,"data/38/商品主图_10.jpg"
   ],
-    detailImage: "data/38/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/38/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "豐富色彩，環保染料不掉色，紙張細膩柔軟，提升酒店檔次。", EN: "Rich colors, eco-dye, soft and fine to elevate hotel class." },
     stock: 10000, active: true
   },
@@ -604,7 +604,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/39/商品主图_1.png",
     images: ["data/39/商品主图_1.png","data/39/商品主图_1.png","data/39/商品主图_1.png","data/39/商品主图_1.png","data/39/商品主图_1.png"],
-    detailImage: "data/39/描述图(拼接)_1.png", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/39/描述图(拼接)_1.png", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱6卷（每卷680克）。\n【產品尺寸】卷直徑：7cm x 高：9cm；紙巾寬度：9cm；層數：4層加厚。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】強韌潔白親膚，4層加厚設計使濕水不易爛。大容量設計能有效減少更換頻率，是商場、學校等高人流量公用場所的超值首選。", 
     EN: "【Spec】6 rolls/case (680g per roll).\n【Size】Roll: Dia 7cm x H 9cm; Paper Width: 9cm; 4-ply thickened.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Strong, white, and skin-friendly. The 4-ply design ensures durability even when wet. Jumbo capacity reduces refill frequency, making it the ideal choice for high-traffic public areas like malls and schools." },
     stock: 10000, active: true
@@ -615,7 +615,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     name: { TC: "柯洛克商用小卷廁紙", EN: "Cloak Small Roll Toilet Paper" },
     price: 0, 
     image: "data/40/商品主图_1.jpg",
-    detailImage: "data/40/描述图(拼接)_1.png", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/40/描述图(拼接)_1.png", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     images: ["data/40/商品主图_1.jpg","data/40/商品主图_1.jpg","data/40/商品主图_2.jpg","data/40/商品主图_3.jpg","data/40/商品主图_4.jpg"],
     description: {TC: "【產品規格】1箱100卷（每卷50克）。\n【產品尺寸】卷直徑：7cm x 高：9cm；紙巾尺寸：10cm/節，約150節；層數：2層加厚。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】強韌潔白親膚，2層加厚設計使濕水不易爛。商用小卷規格適合燒烤場、戶外場地及公廁等人流密集場合使用，經濟實惠且高品質。", 
     EN: "【Spec】100 rolls/case (50g per roll).\n【Size】Roll: Dia 7cm x H 9cm; Paper: 10cm/sheet, approx. 150 sheets; 2-ply thickened.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Strong, white, and skin-friendly. The 2-ply design ensures durability even when wet. Commercial small roll spec, ideal for high-traffic areas like BBQ sites, outdoor venues, and public toilets, providing excellent value." },
@@ -628,7 +628,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/41/商品主图_1.jpg",
     images: ["data/41/商品主图_1.jpg","data/41/商品主图_1.jpg","data/41/商品主图_1.jpg","data/41/商品主图_1.jpg","data/41/商品主图_1.jpg"],
-    detailImage: "data/41/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/41/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {TC: "【產品規格】1箱30包（每包80張）。\n【產品尺寸】紙巾尺寸：W20 x H20cm；層數：4層加厚。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】質地極度韌滑，乾濕兩用，加大加厚設計且不掉屑。柔韌親膚，4層加厚使濕水不易爛，是家用、酒店會所及高端美容院的超值首選。", 
     EN: "【Spec】30 packs/case (80 sheets per pack).\n【Size】Paper Size: W20 x H20cm; 4-ply thickened.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Extremely soft and strong, dry and wet dual use. Oversized and thickened design, lint-free and skin-friendly. The 4-ply structure ensures durability even when wet. The preferred high-value choice for home, hotels, clubs, and premium beauty salons." },
     stock: 10000, active: true
@@ -640,7 +640,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/42/商品主图_1.jpg",
     images: ["data/42/商品主图_1.jpg","data/42/商品主图_1.jpg","data/42/商品主图_1.jpg","data/42/商品主图_1.jpg","data/42/商品主图_1.jpg"],
-    detailImage: "data/42/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/42/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱24包（每包80張）。\n【產品尺寸】紙巾尺寸：W20 x H20cm；加大加厚設計。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】特有珍珠紋理設計，親膚清潔力更強。乾濕兩用，加大加厚且不掉屑，柔韌親膚。這款棉柔巾是家用及美容院日常護理的高性價比之選。", 
     EN: "【Spec】24 packs/case (80 sheets per pack).\n【Size】Tissue Size: W20 x H20cm; Oversized and thickened design.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Unique pearl texture for better cleaning and skin-friendly touch. Dry and wet dual use, lint-free and strong. A high-value choice for daily care in homes and professional beauty salons." },
     stock: 10000, active: true
@@ -652,7 +652,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0.88, 
     image: "data/43/商品主图_1.jpg",
     images: ["data/43/商品主图_1.jpg","data/43/商品主图_1.jpg","data/43/商品主图_1.jpg","data/43/商品主图_1.jpg","data/43/商品主图_1.jpg"],
-    detailImage: "data/43/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/43/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {  TC: "【產品規格】1箱50包（每包50張）。\n【產品尺寸】W20 x H20cm（摺疊後 W10 x H10cm）。\n【外箱尺寸】W51 x D21 x H46cm。\n【商品簡介】革命性佈感材質，質感似布，吸水性強且質地柔軟。環保可自然生物分解且不掉屑，甚至可重複水洗達5次。提供多種顏色及加印LOGO印刷服務，適合會所、酒吧、宴會等高端場所，引領現代餐飲裝飾新潮流。", 
     EN: "【Spec】50 packs/case (50 sheets per pack).\n【Size】W20 x H20cm (Folded: W10 x H10cm).\n【Carton Size】W51 x D21 x H46cm.\n【Features】Revolutionary cloth-feel airlaid paper, soft and highly absorbent. Eco-friendly, biodegradable, and lint-free, it can even be washed up to 5 times. Supports custom LOGO printing and multiple color options. Ideal for clubs, bars, and banquets, leading the trend of modern catering decoration." },
     stock: 10000, active: true
@@ -664,7 +664,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/44/商品主图_1.jpg",
     images: ["data/44/商品主图_1.jpg","data/44/商品主图_1.jpg","data/44/商品主图_1.jpg","data/44/商品主图_1.jpg","data/44/商品主图_1.jpg"],
-    detailImage: "data/44/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/44/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {  TC: "【產品規格】1箱6卷（每卷145節）。\n【產品尺寸】每節 W24 x H27cm；質感似布。\n【外箱尺寸】W51 x D21 x H46cm。\n【商品簡介】採用環保加厚材質，質感似布且吸水強勁，濕水後強韌不易爛。最大特點為可重複水洗使用達5次，且能自然生物降解。除了日常強效除油清潔，亦可作隔水過濾用途。", 
     EN: "【Spec】6 rolls/case (145 sheets per roll).\n【Size】W24 x H27cm per sheet; Cloth-like texture.\n【Carton Size】W51 x D21 x H46cm.\n【Features】Eco-friendly thickened material with a cloth-like texture and strong water absorption. Durable and strong even when wet. It can be washed and reused up to 5 times and is fully biodegradable. Beyond daily heavy-duty cleaning, it can also be used for water filtration purposes." },
     stock: 10000, active: true
@@ -676,7 +676,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/45/商品主图_1.jpg",
     images: ["data/45/商品主图_1.jpg","data/45/商品主图_1.jpg","data/45/商品主图_1.jpg","data/45/商品主图_1.jpg","data/45/商品主图_1.jpg"],
-    detailImage: "data/45/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/45/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱12包。\n【產品尺寸】紙巾尺寸：W12 x H21cm；包裝尺寸：W12 x D11 x H6.5cm。\n【外箱尺寸】W32 x D22 x H20cm。\n【商品簡介】小童專屬尺寸，寬度僅為正常產品的一半。採用蔗渣漿和再造漿製造，環保且可自然生物降解。紙質堅韌不易爛、不掉屑。專為兒童小手設計，能有效減少浪費，尤其適合幼稚園、家用、美容院及注重成本效益的場所。", 
     EN: "【Spec】12 packs/case.\n【Size】Tissue: W12 x H21cm; Pack: W12 x D11 x H6.5cm.\n【Carton Size】W32 x D22 x H20cm.\n【Features】Kid-sized towels, specifically designed to be half the width of standard products to fit small hands and reduce waste. Made from eco-friendly bagasse and recycled pulp, fully biodegradable. Strong, durable, and lint-free. An ideal cost-saving choice for kindergartens, households, and beauty salons." },
     stock: 10000, active: true
@@ -688,7 +688,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 2.0, 
     image: "data/46/商品主图_1.jpg",
     images: ["data/46/商品主图_1.jpg","data/46/商品主图_1.jpg","data/46/商品主图_1.jpg","data/46/商品主图_2.jpg","data/46/商品主图_3.jpg"],
-    detailImage: "data/46/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/46/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {   TC: "【產品規格】1箱20包（每包100張）。\n【產品尺寸】展開尺寸：W40 x H40cm；層數：3層加厚。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】純竹漿製造，完全生物降解，不含螢光劑，健康、環保且親膚。具備乾濕兩用特性，3層加厚設計使濕水後強韌不易爛，且擦拭不掉屑。支持可加印LOGO服務，是家用、大型餐廳及商務會所的超值之選。", 
     EN: "【Spec】20 packs/case (100 sheets per pack).\n【Size】Tissue Size: W40 x H40cm; 3-ply thickened.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Made from 100% pure bamboo pulp, fully biodegradable, healthy, and skin-friendly. Suitable for both dry and wet use. The 3-ply thickened structure ensures it remains strong when wet and remains lint-free. Supports custom LOGO printing. A premium high-value choice for homes, restaurants, and business clubs." },
     stock: 10000, active: true
@@ -700,7 +700,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/47/商品主图_1.jpg",
     images: ["data/47/商品主图_1.jpg","data/47/商品主图_1.jpg","data/47/商品主图_1.jpg","data/47/商品主图_1.jpg","data/47/商品主图_1.jpg"],
-    detailImage: "data/47/描述图(拼接)_1.jpg", videoUrl:"https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/47/描述图(拼接)_1.jpg", videoUrl:"https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱24包（每包100張）。\n【產品尺寸】紙巾尺寸：W20 x H20cm；加大加厚設計。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】細膩平紋設計，柔軟不掉屑。乾濕兩用，加大加厚設計確保濕水不爛，觸感柔韌親膚。這款棉柔巾是家用及美容院日常洗臉與護理的超值首選。", 
     EN: "【Spec】24 packs/case (100 sheets per pack).\n【Size】Tissue Size: W20 x H20cm; Enlarged and thickened design.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Fine plain weave design, soft and lint-free. Suitable for both dry and wet use. The thickened structure ensures it remains durable even when wet. An excellent high-value choice for daily facial cleaning and professional beauty salon care." },
     stock: 10000, active: true
@@ -712,7 +712,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0.88, 
     image: "data/48/商品主图_1.jpg",
     images: ["data/48/商品主图_1.jpg","data/48/商品主图_1.jpg","data/48/商品主图_1.jpg","data/48/商品主图_1.jpg","data/48/商品主图_1.jpg"],
-    detailImage: "data/48/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/48/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱50包（每包50張）。\n【產品尺寸】W20 x H20cm（摺疊後 W10 x H10cm）。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】極簡純黑風格，高端佈感無塵材質，質感似布且乾濕兩用。最大特色為可重複水洗達5次，加大加厚設計確保不掉屑，質地超柔韌且吸水親膚。能顯著提升商務場合與宴會的裝飾層次，是家用、餐廳及酒樓省成本的不二之選。", 
     EN: "【Spec】50 packs/case (50 sheets per pack).\n【Size】W20 x H20cm (Folded: W10 x H10cm).\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】Minimalist black style with a premium cloth-like airlaid texture. Suitable for both dry and wet use, and washable up to 5 times. The enlarged and thickened design ensures it is lint-free, super strong, and skin-friendly. Significantly elevates the decorative level of business events and banquets, making it the perfect cost-saving choice for households and restaurants." },
     stock: 10000, active: true
@@ -724,7 +724,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/49/商品主图_1.jpg",
     images: ["data/49/商品主图_1.jpg","data/49/商品主图_1.jpg","data/49/商品主图_1.jpg","data/49/商品主图_1.jpg","data/49/商品主图_1.jpg"],
-    detailImage: "data/49/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/49/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {   TC: "【產品規格】1箱600片（獨立包裝）。\n【產品尺寸】紙巾尺寸：W20 x H20cm；包裝尺寸：W6.5 x H14cm。\n【外箱尺寸】W51 x D28 x H29cm。\n【商品簡介】採用純環保無塵紙製造，厚度比普通紙巾厚1倍，面積大40%。含酒精成分有效殺滅99%細菌，單片獨立包裝防止二次污染，且環保可自然生物分解。高品質與強效防護力，是商務、旅遊及日常衛生的安心之選。", 
     EN: "【Spec】600 pieces/case (Individually wrapped).\n【Size】Tissue Size: W20 x H20cm; Pack Size: W6.5 x H14cm.\n【Carton Size】W51 x D28 x H29cm.\n【Features】Made from pure eco-friendly Airlaid Paper, twice as thick and 40% larger in area than ordinary napkins. Effectively kills 99% of bacteria. Individually wrapped to prevent secondary contamination and fully biodegradable. Provides high-quality protection for business, travel, and daily hygiene needs." },
     stock: 10000, active: true
@@ -736,7 +736,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0.88, 
     image: "data/50/商品主图_1.jpg",
     images: ["data/50/商品主图_1.jpg","data/50/商品主图_1.jpg","data/50/商品主图_2.jpg","data/50/商品主图_3.jpg","data/50/商品主图_4.jpg"],
-    detailImage: "data/50/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/50/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: {  TC: "【產品規格】1箱30包（每包80張），共15款色彩可選。\n【產品尺寸】紙巾尺寸：W20 x H20cm；層數：4層加厚。\n【外箱尺寸】W41 x D31.5 x H32cm。\n【商品簡介】高品質染色無塵紙，提供15款鮮艷色彩且牢固不掉色，滿足各類主題場景佈置。具備乾濕兩用特性，加大加厚設計確保擦拭不掉屑，4層加厚結構使濕水後依然強韌不爛。質地柔韌親膚，是家用、美容院及宴會裝飾的超值首選。", 
     EN: "【Spec】30 packs/case (80 sheets per pack), 15 colors available.\n【Size】Tissue Size: W20 x H20cm; 4-ply thickened.\n【Carton Size】W41 x D31.5 x H32cm.\n【Features】High-quality colored airlaid paper with 15 vibrant, color-fast options to suit any scene. Suitable for both dry and wet use. The enlarged and thickened 4-ply structure ensures it is lint-free and stays strong even when wet. Soft and skin-friendly, it is the ideal high-value choice for homes, beauty salons, and event decorations." },
     stock: 10000, active: true
@@ -748,7 +748,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/51/商品主图_1.jpg",
     images: ["data/51/商品主图_1.jpg","data/51/商品主图_1.jpg","data/51/商品主图_1.jpg","data/51/商品主图_1.jpg","data/51/商品主图_1.jpg"],
-    detailImage: "data/51/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/51/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "【產品規格】1箱50包（每包110抽 / 330張）。\n【產品尺寸】紙巾尺寸：W19 x H15cm；包裝尺寸：W155 x D100 x H4cm。\n【外箱尺寸】W50.5 x D32.5 x H22cm。\n【商品簡介】特別添加柔潤保濕成份，確保每張紙巾都極致柔潤順滑且堅韌不掉粉。親膚呵護設計，非常適合母嬰使用，且對敏感鼻使用者極其友好。其觸感極度輕柔，是日常面部保養與嬌嫩肌膚護理的超值之選。", 
     EN: "【Spec】50 packs/case (110 pulls / 330 sheets per pack).\n【Size】Tissue Size: W19 x H15cm; Pack Size: W155 x D100 x H4cm.\n【Carton Size】W50.5 x D32.5 x H22cm.\n【Features】Specially formulated with moisturizing ingredients to ensure every sheet is smooth, soft, and strong without lint. Designed for skin-friendly care, making it perfect for mothers, babies, and those with sensitive noses. Its extremely silky texture is ideal for daily facial care and delicate skin protection." },
     stock: 10000, active: true
@@ -762,7 +762,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 0, 
     image: "data/52/商品主图_1.jpg",
     images: ["data/52/商品主图_1.jpg","data/52/商品主图_2.jpg","data/52/商品主图_3.jpg","data/52/商品主图_4.jpg","data/52/商品主图_5.jpg"],
-    detailImage: "data/52/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk.mp4",
+    detailImage: "data/52/描述图(拼接)_1.jpg", videoUrl: "https://www.youtube.com/embed/thnPxf12mjk",
     description: { TC: "規格：工業大軸。專業染色工藝，染色均勻且色牢度高，是造紙深加工與印刷廠的核心原料。", EN: "Spec: Jumbo roll. Professional dyeing process with high color stability, essential material for factories." },
     stock: 10000, active: true
   }
