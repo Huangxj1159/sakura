@@ -211,15 +211,24 @@ function HomeView({ setView, lang }: any) {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          <div className="lg:col-span-2 aspect-video bg-black rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl relative group border-4 border-gray-100">
-             <video controls className="w-full h-full object-cover">
-               <source src="https://www.youtube.com/embed/AnQrma3UdKI.mp4" type="video/mp4" />
-             </video>
-             <div className="absolute top-4 md:top-6 left-4 md:left-6 pointer-events-none">
-                <span className="bg-red-800 text-white text-[8px] md:text-[9px] font-black px-3 md:px-4 py-1.5 md:py-2 rounded-full uppercase tracking-widest shadow-lg">{String(t.factory_video)}</span>
-             </div>
-          </div>
-          
+  <div className="lg:col-span-2 aspect-video bg-black rounded-2xl md:rounded-[40px] overflow-hidden shadow-2xl relative group border-4 border-gray-100">
+    
+    {/* 这里把 <video> 换成 <iframe> */}
+    <iframe
+      className="w-full h-full object-cover"
+      src="https://www.youtube.com/embed/AnQrma3UdKI" 
+      title="YouTube video player"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    ></iframe>
+
+    <div className="absolute top-4 md:top-6 left-4 md:left-6 pointer-events-none">
+      <span className="bg-red-800 text-white text-[8px] md:text-[9px] font-black px-3 md:px-4 py-1.5 md:py-2 rounded-full uppercase tracking-widest shadow-lg">
+        {String(t.factory_video)}
+      </span>
+    </div>
+  </div>
           {[1, 2, 3, 4].map(i => (
             <div key={i} className="group relative aspect-square bg-gray-50 rounded-2xl md:rounded-[40px] overflow-hidden border-2 border-transparent hover:border-red-800 transition-all shadow-sm">
               <img 
@@ -256,9 +265,15 @@ function AboutView({ lang }: any) {
           </div>
           <div className="flex-1 w-full relative">
             <div className="aspect-video bg-black rounded-2xl md:rounded-[40px] overflow-hidden shadow-3xl border-4 md:border-[12px] border-gray-50 relative z-10">
-              <video controls className="w-full h-full object-cover">
-                <source src="https://www.youtube.com/embed/LdZjxIbqfRg" type="video/mp4" />
-              </video>
+            <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/AnQrma3UdKI" 
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      ></iframe>
+
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-800 rounded-full opacity-5 hidden lg:block"></div>
           </div>
