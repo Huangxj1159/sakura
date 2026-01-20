@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
       // ⭐ 修改这里：从 '/sakura/' 改为 '/'
-      base: '/sakura/', 
+      base: '/',
       server: {
         port: 3000,
         host: '0.0.0.0',
