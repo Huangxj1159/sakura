@@ -434,8 +434,10 @@ useEffect(() => {
             {/* 第三層：遍歷小系列渲染 */}
             {subCatsInThisCat.map((subKey: any) => {
               // 篩選出屬於該「大系列」且同時屬於該「小系列」的產品
-              const finalProducts = productsInCat.filter((p: any) => (p.subCategory || 'sub_none') === subKey);
 
+              const finalProducts = productsInCat.filter((p: any) => (p.subCategory || 'sub_none') === subKey);
+              const firstProduct = finalProducts[0];
+              const displaySubName = firstProduct?.subCategoryName?.[lang] || t[subKey] || subKey;
               return (
                 <div key={`${cat}-${subKey}`} className="mb-20 last:mb-0">
                   {/* 小系列副標題 (只有 subKey 不是 sub_none 時顯示) */}
@@ -443,7 +445,7 @@ useEffect(() => {
                     <div className="flex items-center gap-4 mb-8">
                       <div className="h-1 w-12 bg-red-800 rounded-full"></div>
                       <h4 className="text-2xl font-black text-gray-800 tracking-tight">
-                        {t[subKey] || subKey}
+                        {displaySubName}
                       </h4>
                       <div className="h-[1px] flex-1 bg-gray-200"></div>
                     </div>

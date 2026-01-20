@@ -1,7 +1,5 @@
 
 import { Language, TranslationMap, Product } from './types';
-
-
 export const TRANSLATIONS: TranslationMap = {
   [Language.TC]: {
     home: "首頁",
