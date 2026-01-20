@@ -614,7 +614,7 @@ function AdminView({ products, setProducts, orders, users = [],setOrders, lang ,
   // 保存商品变更到后端
   const saveProductToBackend = async (product: Product) => {
     try {
-      await fetch(`${API_URL}/products/update`, {
+      await fetch(`${API_URL}/products/save`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' , 'x-user-role': currentUser.role},
         body: JSON.stringify(product)
