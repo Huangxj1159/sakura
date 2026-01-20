@@ -609,7 +609,6 @@ function AuthView({ t, isRegistering, setIsRegistering, onLogin, onRegister, lan
 }
 function AdminView({ products, setProducts, orders, users = [],setOrders, lang ,view, currentUser}: any) {
   const [tab, setTab] = useState<'inventory' | 'orders' | 'add'| 'users'>('inventory');
-  const API_URL = 'http://localhost:5000/api';
     const [editingProd, setEditingProd] = useState<any>(null); // 當前正在編輯的商品
   const t = TRANSLATIONS[lang];
   // 保存商品变更到后端
