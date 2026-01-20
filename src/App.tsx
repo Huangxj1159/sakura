@@ -3,7 +3,7 @@ import { Language, Product, CartItem, Order, OrderStatus, User, UserRole } from 
 import { TRANSLATIONS } from './constants';
 
 // 1. 定义后端 API 地址 (确保你的 Node.js 后端正在运行)
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://sakura-backend-gamma.vercel.app/api';
 
 export default function App() {
   const [lang, setLang] = useState<Language>(Language.TC);
