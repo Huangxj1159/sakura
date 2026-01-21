@@ -107,7 +107,7 @@ export const TRANSLATIONS: TranslationMap = {
     select_pay_method: "選擇支付方式",
     not_for_sale_hint: "只有柯洛克系列產品方可下單",
     factory_desc: "柯洛克（香港）自有全自動化生產線，嚴格把控每一道工序。",
-    shipping_notice: "🚚 免費送貨：港島區滿 HKD 1500元／單；九龍．新界區滿HKD 1500元／單；九龍．新界區滿HKD 1000 元／單。離島及特殊區域另議。如貨值不夠，每單加收 HKD$100 元運費。",
+    shipping_notice: "🚚 免費送貨：港島區滿 HKD$1500 元／單；九龍．新界區滿 HKD$1000 元／單。離島及特殊區域另議。如貨值不夠，每單加收 HKD$100 元運費。",
   },
   [Language.EN]: {
     home: "Home",
@@ -213,7 +213,7 @@ export const TRANSLATIONS: TranslationMap = {
     production_details: "PRODUCTION",
     select_pay_method: "Select Payment Method",
     not_for_sale_hint: "* Ordering is available for Cloak series only",
-    shipping_notice: "🚚 FREE DELIVERY: Orders over HKD$1,500 for HK Island; over HKD$1,000 for Kowloon & NT. Delivery to outlying islands/special areas subject to negotiation. A HKD$100 shipping fee applies to orders below the minimum amount.",
+    shipping_notice: "🚚 Free Delivery: Orders over HKD 1,500 for HongKong Island;over HKD 1,000 for Kowloon & New Territories. Delivery to outlying islands and special areas is subject to negotiation. A HKD$100 shipping fee applies to orders below the minimum amount.",
     factory_desc: "Cloak (HK) fully automated production lines with strict quality control."
   }
 };
