@@ -70,7 +70,7 @@ export const TRANSLATIONS: TranslationMap = {
     update_stock: "更新庫存",
     add_product: "上架商品",
     home_title: "柯洛克品牌系列",
-    home_subtitle: "提供專利無塵技術與環保包裝解決方案，為您的品牌增色。",
+    home_subtitle: "提供專利無塵紙染色技術與環保包裝解決方案，爲您的品牌賦能增值",
     buy_now: "立即訂貨",
     case_studies: "生產車間",
     add: "選購",
@@ -107,7 +107,7 @@ export const TRANSLATIONS: TranslationMap = {
     select_pay_method: "選擇支付方式",
     not_for_sale_hint: "只有柯洛克系列產品方可下單",
     factory_desc: "柯洛克（香港）自有全自動化生產線，嚴格把控每一道工序。",
-    shipping_notice: "🚚 送貨每單加收 HKD$100 元運費。免費送貨：港島區滿 HKD$1500 元／單；九龍．新界區滿 HKD$1000 元／單。離島及特殊區域另議。",
+    shipping_notice: "🚚 免費送貨：港島區滿 HKD 1500元／單；九龍．新界區滿HKD 1500元／單；九龍．新界區滿HKD 1000 元／單。離島及特殊區域另議。如貨值不夠，每單加收 HKD$100 元運費。",
   },
   [Language.EN]: {
     home: "Home",
@@ -180,7 +180,7 @@ export const TRANSLATIONS: TranslationMap = {
     update_stock: "Update Stock",
     add_product: "Add Item",
     home_title: "Cloak Brand Series",
-    home_subtitle: "Patented Airlaid Paper technology and eco-friendly solutions.",
+     home_subtitle: "Providing patented airlaid paper dyeing technology and eco-friendly packaging solutions to empower and add value to your brand.",
     buy_now: "Shop Now",
     case_studies: "Workshop",
     add: "Add",
@@ -213,7 +213,7 @@ export const TRANSLATIONS: TranslationMap = {
     production_details: "PRODUCTION",
     select_pay_method: "Select Payment Method",
     not_for_sale_hint: "* Ordering is available for Cloak series only",
-    shipping_notice: "🚚 Shipping fee HKD$100 per order. FREE SHIPPING: HK Island orders over HKD$1500; Kowloon & NT orders over HKD$1000. Outlying islands and special areas subject to negotiation.",
+    shipping_notice: "🚚 FREE DELIVERY: Orders over HKD$1,500 for HK Island; over HKD$1,000 for Kowloon & NT. Delivery to outlying islands/special areas subject to negotiation. A HKD$100 shipping fee applies to orders below the minimum amount.",
     factory_desc: "Cloak (HK) fully automated production lines with strict quality control."
   }
 };
