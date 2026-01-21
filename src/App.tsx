@@ -224,7 +224,7 @@ const totalItems = Object.values(cart).reduce((sum: number, qty: any) => sum + q
       <nav className="sticky top-0 z-50 bg-[#8b0000] text-white shadow-xl px-4 py-3 md:py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4 md:gap-12">
-            <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter uppercase">Cloak</h1>
+            <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter ">Cloak</h1>
             <div className="flex gap-8 text-[11px] font-black uppercase tracking-widest">
               <button onClick={() => setView('home')} className={view === 'home' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.home)}</button>
               <button onClick={() => setView('products')} className={view === 'products' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.products)}</button>
