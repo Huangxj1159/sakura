@@ -224,7 +224,7 @@ const totalItems = Object.values(cart).reduce((sum: number, qty: any) => sum + q
       <nav className="sticky top-0 z-50 bg-[#8b0000] text-white shadow-xl px-4 py-3 md:py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4 md:gap-12">
-            <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter uppercase">CLOAK</h1>
+            <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter uppercase">Cloak</h1>
             <div className="flex gap-8 text-[11px] font-black uppercase tracking-widest">
               <button onClick={() => setView('home')} className={view === 'home' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.home)}</button>
               <button onClick={() => setView('products')} className={view === 'products' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.products)}</button>
@@ -331,7 +331,7 @@ function HomeView({ setView, lang }: any) {
         <div className="flex justify-between items-end mb-12 border-b-8 border-red-800 pb-8">
           <div>
             <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-2">{String(t.case_studies)}</h3>
-            <p className="text-gray-400 text-sm font-bold">{lang === Language.TC ? '柯洛克（香港）自有全自動化生產線，嚴格把控每一道工序。' : 'CLOAK (HK) owns fully automated production lines.'}</p>
+            <p className="text-gray-400 text-sm font-bold">{lang === Language.TC ? '柯洛克（香港）自有全自動化生產線，嚴格把控每一道工序。' : 'Cloak (HK) owns fully automated production lines.'}</p>
           </div>
           <span className="text-[10px] font-black text-red-800 bg-red-50 px-4 py-2 rounded-full uppercase tracking-widest">{lang === Language.TC ? '實地拍攝' : 'FACTORY LIVE'}</span>
         </div>
