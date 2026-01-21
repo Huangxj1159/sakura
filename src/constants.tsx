@@ -43,7 +43,7 @@ export const TRANSLATIONS: TranslationMap = {
     category_wet: "濕紙巾系列",
     category_large_roll: "大軸卷裝系列",
     category_toilet_roll: "彩色卷裝衛生紙系列",
-    category_cloak: "柯洛克品牌系列 Cloak",
+    category_cloak: "柯洛克品牌系列",
     category_rawmaterial: "原材料系列",
     stock: "現有庫存",
     order_status: "訂單狀態",
