@@ -221,40 +221,51 @@ const totalItems = Object.values(cart).reduce((sum: number, qty: any) => sum + q
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800 overflow-x-hidden">
       {/* 顶部导航 */}
+{/* 顶部导航 - 字体已调大 */}
       <nav className="sticky top-0 z-50 bg-[#8b0000] text-white shadow-xl px-4 py-3 md:py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-4 md:gap-12">
-            <h1 onClick={() => setView('home')} className="text-xl md:text-2xl font-black cursor-pointer tracking-tighter ">Cloak</h1>
-            <div className="flex gap-8 text-[11px] font-black uppercase tracking-widest">
+            {/* 1. Logo 字体调大: text-2xl md:text-3xl */}
+            <h1 onClick={() => setView('home')} className="text-2xl md:text-3xl font-black cursor-pointer tracking-tighter">
+              Cloak
+            </h1>
+
+            {/* 2. 菜单链接调大: text-sm (手机) md:text-base (电脑) */}
+            <div className="flex gap-4 md:gap-8 text-sm md:text-base font-black uppercase tracking-widest">
               <button onClick={() => setView('home')} className={view === 'home' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.home)}</button>
               <button onClick={() => setView('products')} className={view === 'products' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.products)}</button>
               {currentUser && <button onClick={() => setView('my_orders')} className={view === 'my_orders' ? 'text-yellow-400' : 'hover:text-yellow-400'}>{String(t.my_orders)}</button>}
               {currentUser?.role === UserRole.ADMIN && (
-                <button onClick={() => setView('admin')} className="bg-white text-red-800 px-4 py-1 rounded-full text-[10px] font-black">{String(t.admin)}</button>
+                <button onClick={() => setView('admin')} className="bg-white text-red-800 px-4 py-1 rounded-full text-xs font-black">{String(t.admin)}</button>
               )}
             </div>
           </div>
+
           <div className="flex items-center gap-3 md:gap-6">
-            <select value={lang} onChange={e => setLang(e.target.value as Language)} className="text-[10px] border-none rounded-lg p-1.5 md:p-2 font-black bg-red-900 text-white outline-none">
+            {/* 3. 语言选择调大: text-xs md:text-sm */}
+            <select value={lang} onChange={e => setLang(e.target.value as Language)} className="text-xs md:text-sm border-none rounded-lg p-1.5 md:p-2 font-black bg-red-900 text-white outline-none cursor-pointer">
               <option value={Language.TC}>繁體</option>
               <option value={Language.EN}>EN</option>
             </select>
-<button onClick={() => setView('cart')} className="relative p-2 bg-red-800 rounded-full hover:bg-red-700">
-  🛒
-  {/* 🔥 修改点：使用 totalItems 替代 cart.length */}
-  {totalItems > 0 && (
-    <span className="absolute -top-1 -right-1 bg-yellow-400 text-red-900 text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-black animate-pulse">
-      {totalItems}
-    </span>
-  )}
-</button>
+
+            {/* 购物车图标保持，数字标稍微调大 */}
+            <button onClick={() => setView('cart')} className="relative p-2 bg-red-800 rounded-full hover:bg-red-700 transition-colors">
+              <span className="text-xl">🛒</span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-yellow-400 text-red-900 text-xs w-5 h-5 rounded-full flex items-center justify-center font-black animate-pulse">
+                  {totalItems}
+                </span>
+              )}
+            </button>
+
+            {/* 4. 登录/用户信息调大: text-xs md:text-sm */}
             {currentUser ? (
               <div className="flex items-center gap-2 md:gap-4">
-                <span className="text-[10px] hidden sm:inline font-black uppercase tracking-widest line-clamp-1 max-w-[80px]">{currentUser.name}</span>
-                <button onClick={() => { setCurrentUser(null); setView('home'); }} className="text-[10px] text-red-200 hover:text-white font-bold">{String(t.logout)}</button>
+                <span className="text-xs md:text-sm hidden sm:inline font-black uppercase tracking-widest line-clamp-1 max-w-[100px]">{currentUser.name}</span>
+                <button onClick={() => { setCurrentUser(null); setView('home'); }} className="text-xs md:text-sm text-red-200 hover:text-white font-bold">{String(t.logout)}</button>
               </div>
             ) : (
-              <button onClick={() => setView('auth')} className="bg-white text-red-800 px-4 md:px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest">{String(t.login)}</button>
+              <button onClick={() => setView('auth')} className="bg-white text-red-800 px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-black uppercase tracking-widest hover:scale-105 transition-transform">{String(t.login)}</button>
             )}
           </div>
         </div>
