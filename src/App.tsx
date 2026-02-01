@@ -308,7 +308,7 @@ const totalItems = Object.values(cart).reduce((sum: number, qty: any) => sum + q
           <div>
             <h4 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-4">Contact</h4>
             <p className="text-sm font-black text-red-800">E-mail: sakura328@yahoo.com.hk</p>
-            <p className="text-sm font-black text-red-800 mt-2">WhatsApp: 56112982</p>
+            <p className="text-sm font-black text-red-800 mt-2">WhatsApp: (852)56112982</p>
             <p className="text-[10px] text-gray-400 font-black mt-8 uppercase">© 2026 Sakura（HongKong )Products limited </p>
             <p className="text-[10px] text-gray-400 font-black mt-8 uppercase">All Right Reserved.</p>
           </div>
