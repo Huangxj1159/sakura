@@ -70,7 +70,7 @@ export const TRANSLATIONS: TranslationMap = {
     update_stock: "更新庫存",
     add_product: "上架商品",
     home_title: "柯洛克品牌系列",
-    home_subtitle: "一次性餐飲外賣包裝用品及生活用紙採購平台，提供專業解決方案",
+    home_subtitle: "一次性餐飲外賣包裝用品及生活用紙採購平台,提供專業解決方案",
     buy_now: "立即訂貨",
     case_studies: "生產車間",
     add: "選購",
